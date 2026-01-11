@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.masterthought:cucumber-reporting:5.7.6"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group = 'com.nttdata'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+ext {
+    karateVersion = '1.4.1'
+    junitVersion = '5.10.2'
+    cucumberReportVersion = '5.7.6'
+}
+
+dependencies {
+    testImplementation "com.intuit.karate:karate-junit5:${karateVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+    testImplementation "net.masterthought:cucumber-reporting:${cucumberReportVersion}"
+    testImplementation "commons-io:commons-io:2.15.1"
+
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+    systemProperty "karate.options", System.properties.getProperty("karate.options")
+    systemProperty "karate.env", System.properties.getProperty("karate.env")
+    outputs.upToDateWhen { false }
+
+    // limpia reportes anteriores (opcional pero recomendado)
+    doFirst {
+        delete "${buildDir}/reports/cucumber"
+        delete "${buildDir}/reports/cucumber-html"
+    }
+}

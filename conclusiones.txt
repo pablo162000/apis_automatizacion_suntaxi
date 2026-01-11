@@ -1,0 +1,35 @@
+CONCLUSIONES Y HALLAZGOS - PRUEBAS API PETSTORE (KARATE)
+=======================================================
+-----------------------------------------
+HALLAZGOS PRINCIPALES
+-----------------------------------------
+- La API de PetStore es una API pública y compartida, por lo que los datos no están aislados por usuario.
+  Esto se nota especialmente en endpoints de búsqueda global como GET /pet/findByStatus, donde los
+  resultados pueden variar entre ejecuciones.
+
+- Al ejecutar las pruebas en paralelo (por ejemplo parallel(4)), se presentaron fallos intermitentes,
+  ya que varias ejecuciones concurrentes pueden afectar la consistencia de los datos.
+  Por este motivo, se decidió ejecutar las pruebas con parallel(1) para asegurar estabilidad y
+  resultados confiables durante la evaluación del reto.
+
+- Para cumplir con el enunciado del ejercicio, el flujo completo fue modelado en 4 escenarios BDD,
+  reutilizando la lógica de creación de la mascota mediante un feature helper (create-pet.feature).
+  Esto permitió evitar duplicación de código y mantener las pruebas más ordenadas y fáciles de mantener.
+
+-----------------------------------------
+CONCLUSIONES
+-----------------------------------------
+- Karate Framework resulta una herramienta muy práctica para la automatización de pruebas de servicios
+  REST, ya que permite escribir pruebas claras usando un enfoque BDD y realizar validaciones directas
+  sobre las respuestas del servicio.
+
+- El uso de features reutilizables mediante call facilita el mantenimiento del código y ayuda a
+  centralizar lógica común, como la creación de datos necesarios para las pruebas.
+
+- La generación de reportes HTML, tanto el reporte nativo de Karate como el reporte estilo Cucumber
+  (Masterthought), facilita la revisión de los resultados, permitiendo identificar rápidamente el
+  estado de los escenarios, los pasos ejecutados y los tiempos de ejecución.
+
+
+
+

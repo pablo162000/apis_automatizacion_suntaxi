@@ -1,0 +1,8 @@
+{
+  "id": 0,
+  "category": { "id": 1, "name": "dogs" },
+  "name": "Petrandom",
+  "photoUrls": ["https://images.pexels.com/photos/850602/pexels-photo-850602.jpeg"],
+  "tags": [{ "id": 1, "name": "apisautomatizacion" }],
+  "status": "available"
+}
