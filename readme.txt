@@ -50,7 +50,7 @@ EJECUCIÓN DE LAS PRUEBAS (PASO A PASO)
 
 
 - Para correr localmente desde IntelliJ:
-  Ejecutar la clase UserGetRunner (Runner simple)
+  Ejecutar la clase ManagementTest (Runner simple)
 
 Esto:
 - Limpia el directorio build/ (por clean)
