@@ -76,11 +76,16 @@ Este comando realiza las siguientes acciones:
 ### Reporte HTML Cucumber (Masterthought):
 Ruta:
 
-`build/cucumber-html-reports/cucumber-html-reports/report-feature_<id>.html`
+`build/cucumber-html-reports/report-feature_<id>.html`
 ### Reporte HTML nativo de Karate
 Ruta:
 
 `build/reports/cucumber/karate-summary.html`
+
+### Reporte HTML Cucumber Sin ejecución (Masterthought):
+El repositorio incluye el reporte generado a partir de la última ejecución del escenario automatizado.
+El reporte puede visualizarse directamente sin ejecutar las pruebas en la siguiente ruta
+`build/cucumber-html-reports/report-feature_<id>.html`
 
 ## Información adicional
 - Los datos de entrada se parametrizan mediante archivos JSON / CSV ubicados en:
